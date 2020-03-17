@@ -33,6 +33,7 @@
                 `banner_id` mediumint(8) unsigned NOT NULL default 0,
                 `question` text NOT NULL default '',
                 `answer` text NOT NULL default '',
+                `author` varchar(64) NOT NULL default '',
                 `description` mediumtext,
                 `lang_code` char(2) NOT NULL default '',
                 PRIMARY KEY  (`banner_id`,`lang_code`)
