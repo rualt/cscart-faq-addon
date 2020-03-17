@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>faq_page</id>
+    <version>1.0</version>
+    <priority>4294967294</priority>
+    <position>0</position>
+    <auto_install>MULTIVENDOR,ULTIMATE</auto_install>
+    <status>active</status>
+    <default_language>en</default_language>
+    <authors>
+        <author>
+            <name>Ruslan Gazihanov</name>
+            <url>https://github.com/rualt</url>
+        </author>
+    </authors>
+    <queries>
+        <item>DROP TABLE IF EXISTS ?:questions;</item>
+        <item>DROP TABLE IF EXISTS ?:question_descriptions;</item>
+        <item>
+            CREATE TABLE `?:questions` (
+                `banner_id` mediumint(8) unsigned NOT NULL auto_increment,
+                `status` char(1) NOT NULL default 'A',
+                `localization` varchar(255) NOT NULL default '',
+                `timestamp` int(11) unsigned NOT NULL default '0',
+                `position` smallint(5) unsigned NOT NULL default '0',
+                PRIMARY KEY  (`banner_id`),
+                KEY `localization` (`localization`),
+                KEY `status` (`status`)
+            ) Engine=MyISAM DEFAULT CHARSET UTF8;
+        </item>
+        <item>
+            CREATE TABLE `?:question_descriptions` (
+                `banner_id` mediumint(8) unsigned NOT NULL default 0,
+                `question` text NOT NULL default '',
+                `answer` text NOT NULL default '',
+                `description` mediumtext,
+                `lang_code` char(2) NOT NULL default '',
+                PRIMARY KEY  (`banner_id`,`lang_code`)
+            ) Engine=MyISAM DEFAULT CHARSET UTF8;
+        </item>
+    </queries>
+</addon>
