@@ -1,0 +1,33 @@
+msgid ""
+msgstr "Project-Id-Version: tygh\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: English\n"
+"Language: en_US"
+
+msgctxt "Addons::name::faq_page"
+msgid "FAQ Page"
+msgstr "FAQ Page"
+
+msgctxt "Addons::description::faq_page"
+msgid "FAQ Page description"
+msgstr "Addon description"
+
+msgctxt "Languages::faq_page.question"
+msgid "Question"
+msgstr "Question"
+
+msgctxt "Languages::faq_page.answer"
+msgid "Answer"
+msgstr "Answer"
+
+msgctxt "Languages::faq_page.author"
+msgid "Author"
+msgstr "Author"
+
+msgctxt "Languages::faq_page.creation_date"
+msgid "Creation date"
+msgstr "Creation date"
+
+msgctxt "Languages::faq_page.status"
+msgid "Status"
+msgstr "Status"
