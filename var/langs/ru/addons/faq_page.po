@@ -12,6 +12,14 @@ msgctxt "Addons::description::faq_page"
 msgid "FAQ Page description"
 msgstr "Описание модуля"
 
+msgctxt "Languages::faq_page"
+msgid "FAQ Page"
+msgstr "Вопросы и ответы"
+
+msgctxt "Languages::faq_page_menu_description"
+msgid "This is a menu description"
+msgstr "Это описание меню"
+
 msgctxt "Languages::faq_page.question"
 msgid "Question"
 msgstr "Вопрос"
