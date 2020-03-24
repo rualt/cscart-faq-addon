@@ -1,45 +1,80 @@
+{** test section **}
 
-<p>
+{* <p>
 {__('faq_page.question')}: {$question}
 </p>
 <p>
 {__('faq_page.answer')}: {$answer}
-</p>
+</p> *}
 
-{* * banners section **}
+{** questions section **}
 
 {capture name="mainbox"}
 
-<form action="{""|fn_url}" method="post" name="faq_page_form" class="cm-hide-inputs" enctype="multipart/form-data">
+<form action="{""|fn_url}" method="post" name="questions_form" class="cm-hide-inputs" enctype="multipart/form-data">
 <input type="hidden" name="fake" value="1" />
-{include file="common/pagination.tpl" save_current_page=true save_current_url=true div_id="pagination_contents_faq_page"}
+{include file="common/pagination.tpl" save_current_page=true save_current_url=true div_id="pagination_contents_questions"}
 
 {assign var="c_url" value=$config.current_url|fn_query_remove:"sort_by":"sort_order"}
 
-{assign var="rev" value=$smarty.request.content_id|default:"pagination_contents_faq_page"}
+{assign var="rev" value=$smarty.request.content_id|default:"pagination_contents_questions"}
 {assign var="c_icon" value="<i class=\"icon-`$search.sort_order_rev`\"></i>"}
 {assign var="c_dummy" value="<i class=\"icon-dummy\"></i>"}
 
-{if $faq_page}
+{if $questions}
 <div class="table-responsive-wrapper">
     <table class="table table-middle table--relative table-responsive">
     <thead>
     <tr>
         <th width="1%" class="left mobile-hide">
-            {include file="common/check_items.tpl" class="cm-no-hide-input"}</th>
-        <th><a class="cm-ajax" href="{"`$c_url`&sort_by=name&sort_order=`$search.sort_order_rev`"|fn_url}" data-ca-target-id={$rev}>{__("banner")}{if $search.sort_by == "name"}{$c_icon nofilter}{else}{$c_dummy nofilter}{/if}</a></th>
-        <th class="mobile-hide"><a class="cm-ajax" href="{"`$c_url`&sort_by=type&sort_order=`$search.sort_order_rev`"|fn_url}" data-ca-target-id={$rev}>{__("type")}{if $search.sort_by == "type"}{$c_icon nofilter}{else}{$c_dummy nofilter}{/if}</a></th>
+            {include file="common/check_items.tpl" class="cm-no-hide-input"}
+        </th>
+        <th>
+            <a class="cm-ajax" href="{"`$c_url`&sort_by=name&sort_order=`$search.sort_order_rev`"|fn_url}" 
+            data-ca-target-id={$rev}>{__("faq_page.question")}
+            {if $search.sort_by == "name"}{$c_icon nofilter}{else}{$c_dummy nofilter}{/if}</a>
+        </th>
+        <th class="mobile-hide">
+            <a class="cm-ajax" href="{"`$c_url`&sort_by=type&sort_order=`$search.sort_order_rev`"|fn_url}" 
+            data-ca-target-id={$rev}>{__("faq_page.author")}
+            {if $search.sort_by == "type"}{$c_icon nofilter}{else}{$c_dummy nofilter}{/if}</a>
+        </th>
 
-        {hook name="banners:manage_header"}
-        {/hook}
+        {* {hook name="banners:manage_header"}
+        {/hook} *}
 
         <th width="6%" class="mobile-hide">&nbsp;</th>
         <th width="10%" class="right"><a class="cm-ajax" href="{"`$c_url`&sort_by=status&sort_order=`$search.sort_order_rev`"|fn_url}" data-ca-target-id={$rev}>{__("status")}{if $search.sort_by == "status"}{$c_icon nofilter}{else}{$c_dummy nofilter}{/if}</a></th>
     </tr>
     </thead>
-    {foreach from=$banners item=banner}
-    <tr class="cm-row-status-{$banner.status|lower}">
-        {assign var="allow_save" value=$banner|fn_allow_save_object:"banners"}
+    {foreach from=$questions item=question}
+        <tr class="cm-row-status-{$question.status|lower}">
+            {assign var="allow_save" value=$question|fn_allow_save_object:"questions"}
+
+            {if $allow_save}
+                {assign var="no_hide_input" value="cm-no-hide-input"}
+            {else}
+                {assign var="no_hide_input" value=""}
+            {/if}
+
+            <td class="left mobile-hide">
+                <input type="checkbox" name="question_ids[]" value="{$question.question_id}" class="cm-item {$no_hide_input}" />
+            </td>
+
+            <td class="{$no_hide_input}" data-th="{__("faq_page.question")}">
+                <a class="row-status" href="{"question.update?question_id=`$question.question_id`"|fn_url}">{$question.question}</a>
+                {* {include file="views/companies/components/company_name.tpl" object=$banner} *}
+            </td>
+
+            <td class="nowrap row-status {$no_hide_input} mobile-hide">
+                {$question.author}
+            </td>
+
+        </tr>
+    {/foreach}
+    {* {foreach from=$questions item=question}
+    <tr class="cm-row-status-{$question.status|lower}">
+        {assign var="allow_save" value=$question|fn_allow_save_object:"questions"}
 
         {if $allow_save}
             {assign var="no_hide_input" value="cm-no-hide-input"}
@@ -48,8 +83,8 @@
         {/if}
 
         <td class="left mobile-hide">
-            <input type="checkbox" name="banner_ids[]" value="{$banner.banner_id}" class="cm-item {$no_hide_input}" /></td>
-        <td class="{$no_hide_input}" data-th="{__("banner")}">
+            <input type="checkbox" name="question_ids[]" value="{$question.question_id}" class="cm-item {$no_hide_input}" /></td>
+        <td class="{$no_hide_input}" data-th="{__("question")}">
             <a class="row-status" href="{"banners.update?banner_id=`$banner.banner_id`"|fn_url}">{$banner.banner}</a>
             {include file="views/companies/components/company_name.tpl" object=$banner}
         </td>
@@ -77,7 +112,7 @@
             {include file="common/select_popup.tpl" id=$banner.banner_id status=$banner.status hidden=true object_id_name="banner_id" table="banners" popup_additional_class="`$no_hide_input` dropleft"}
         </td>
     </tr>
-    {/foreach}
+    {/foreach} *}
     </table>
 </div>
 {else}
@@ -88,7 +123,7 @@
 
 {capture name="buttons"}
     {capture name="tools_list"}
-        {if $banners}
+        {if $questions}
             <li>{btn type="delete_selected" dispatch="dispatch[banners.m_delete]" form="banners_form"}</li>
         {/if}
     {/capture}
@@ -104,15 +139,18 @@
 
 {/capture}
 
+
+{* side bar section *}
 {capture name="sidebar"}
-    {hook name="banners:manage_sidebar"}
+    {hook name="faq_page:manage_sidebar"}
     {include file="common/saved_search.tpl" dispatch="banners.manage" view_type="banners"}
     {include file="addons/banners/views/banners/components/banners_search_form.tpl" dispatch="banners.manage"}
     {/hook}
 {/capture}
 
-{hook name="banners:manage_mainbox_params"}
-    {$page_title = __("faq_page")}
+{* block header section *}
+{hook name="faq_page:manage_mainbox_params"}
+    {$page_title = __("faq")}
     {$select_languages = true}
 {/hook}
 
