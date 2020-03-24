@@ -18,25 +18,25 @@
         <item>DROP TABLE IF EXISTS ?:question_descriptions;</item>
         <item>
             CREATE TABLE `?:questions` (
-                `banner_id` mediumint(8) unsigned NOT NULL auto_increment,
+                `question_id` mediumint(8) unsigned NOT NULL auto_increment,
                 `status` char(1) NOT NULL default 'A',
                 `localization` varchar(255) NOT NULL default '',
                 `timestamp` int(11) unsigned NOT NULL default '0',
                 `position` smallint(5) unsigned NOT NULL default '0',
-                PRIMARY KEY  (`banner_id`),
+                PRIMARY KEY  (`question_id`),
                 KEY `localization` (`localization`),
                 KEY `status` (`status`)
             ) Engine=MyISAM DEFAULT CHARSET UTF8;
         </item>
         <item>
             CREATE TABLE `?:question_descriptions` (
-                `banner_id` mediumint(8) unsigned NOT NULL default 0,
+                `question_id` mediumint(8) unsigned NOT NULL default 0,
                 `question` text NOT NULL default '',
                 `answer` text NOT NULL default '',
                 `author` varchar(64) NOT NULL default '',
                 `description` mediumtext,
                 `lang_code` char(2) NOT NULL default '',
-                PRIMARY KEY  (`banner_id`,`lang_code`)
+                PRIMARY KEY  (`question_id`,`lang_code`)
             ) Engine=MyISAM DEFAULT CHARSET UTF8;
         </item>
     </queries>
