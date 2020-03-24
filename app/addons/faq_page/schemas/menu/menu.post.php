@@ -1,6 +1,6 @@
 <?php
 
-$schema['central']['marketing']['items']['faq_page'] = [
+$schema['central']['website']['items']['faq'] = [
     'attrs' => [
         'class'=>'is-addon'
     ],
