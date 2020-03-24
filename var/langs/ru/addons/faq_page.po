@@ -6,15 +6,15 @@ msgstr "Project-Id-Version: tygh\n"
 
 msgctxt "Addons::name::faq_page"
 msgid "FAQ Page"
-msgstr "Вопросы и ответы"
+msgstr "FAQ (Часто задаваемые вопросы)"
 
 msgctxt "Addons::description::faq_page"
 msgid "FAQ Page description"
 msgstr "Описание модуля"
 
-msgctxt "Languages::faq_page"
-msgid "FAQ Page"
-msgstr "Вопросы и ответы"
+msgctxt "Languages::faq_page:faq"
+msgid "FAQ"
+msgstr "FAQ"
 
 msgctxt "Languages::faq_page_menu_description"
 msgid "This is a menu description"
