@@ -99,7 +99,7 @@
 {capture name="buttons"}
     {capture name="tools_list"}
         {if $questions}
-            <li>{btn type="delete_selected" dispatch="dispatch[questions.m_delete]" form="questions_form"}</li>
+            <li>{btn type="delete_selected" dispatch="dispatch[faq_page.m_delete]" form="questions_form"}</li>
         {/if}
     {/capture}
     {dropdown content=$smarty.capture.tools_list class="mobile-hide"}
