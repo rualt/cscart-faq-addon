@@ -14,10 +14,10 @@
         </author>
     </authors>
     <queries>
-        <item>DROP TABLE IF EXISTS ?:questions;</item>
-        <item>DROP TABLE IF EXISTS ?:question_descriptions;</item>
+        <item>DROP TABLE IF EXISTS ?:faq_questions;</item>
+        <item>DROP TABLE IF EXISTS ?:faq_question_descriptions;</item>
         <item>
-            CREATE TABLE `?:questions` (
+            CREATE TABLE `?:faq_questions` (
                 `question_id` mediumint(8) unsigned NOT NULL auto_increment,
                 `status` char(1) NOT NULL default 'A',
                 `localization` varchar(255) NOT NULL default '',
@@ -29,7 +29,7 @@
             ) Engine=MyISAM DEFAULT CHARSET UTF8;
         </item>
         <item>
-            CREATE TABLE `?:question_descriptions` (
+            CREATE TABLE `?:faq_question_descriptions` (
                 `question_id` mediumint(8) unsigned NOT NULL default 0,
                 `question` text NOT NULL default '',
                 `answer` text NOT NULL default '',
