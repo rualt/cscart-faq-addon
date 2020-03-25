@@ -33,6 +33,44 @@ $questions = [
     ]
 ];
 
+if ($_SERVER['REQUEST_METHOD']	== 'POST') {
+
+    // fn_trusted_vars('banners', 'banner_data');
+    // $suffix = '';
+
+    // //
+    // // Delete banners
+    // //
+    // if ($mode == 'm_delete') {
+    //     foreach ($_REQUEST['banner_ids'] as $v) {
+    //         fn_delete_banner_by_id($v);
+    //     }
+
+    //     $suffix = '.manage';
+    // }
+
+    //
+    // Add/edit banners
+    //
+    if ($mode == 'update') {
+        $banner_id = fn_faq_page_update_question($_REQUEST['question_data'], $_REQUEST['question_id'], DESCR_SL);
+
+        $question_id = $_REQUEST['question_id'];
+
+        $suffix = ".update?question_id=$question_id";
+    }
+
+    // if ($mode == 'delete') {
+    //     if (!empty($_REQUEST['banner_id'])) {
+    //         fn_delete_banner_by_id($_REQUEST['banner_id']);
+    //     }
+
+    //     $suffix = '.manage';
+    // }
+
+    return array(CONTROLLER_STATUS_OK, 'faq_page' . $suffix);
+}
+
 if ($mode == 'update') {
     //temporary data
     $question = [];
