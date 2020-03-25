@@ -34,7 +34,6 @@
                 `question` text NOT NULL default '',
                 `answer` text NOT NULL default '',
                 `author` varchar(64) NOT NULL default '',
-                `description` mediumtext,
                 `lang_code` char(2) NOT NULL default '',
                 PRIMARY KEY  (`question_id`,`lang_code`)
             ) Engine=MyISAM DEFAULT CHARSET UTF8;
