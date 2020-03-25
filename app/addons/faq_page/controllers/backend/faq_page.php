@@ -8,20 +8,6 @@ if (!defined('BOOTSTRAP')) {
 
 if ($_SERVER['REQUEST_METHOD']	== 'POST') {
 
-    // fn_trusted_vars('banners', 'banner_data');
-    // $suffix = '';
-
-    // //
-    // // Delete banners
-    // //
-    // if ($mode == 'm_delete') {
-    //     foreach ($_REQUEST['banner_ids'] as $v) {
-    //         fn_delete_banner_by_id($v);
-    //     }
-
-    //     $suffix = '.manage';
-    // }
-
     //
     // Add/edit banners
     //
@@ -33,16 +19,12 @@ if ($_SERVER['REQUEST_METHOD']	== 'POST') {
         $suffix = ".update?question_id=$question_id";
     }
 
-    // if ($mode == 'delete') {
-    //     if (!empty($_REQUEST['banner_id'])) {
-    //         fn_delete_banner_by_id($_REQUEST['banner_id']);
-    //     }
-
-    //     $suffix = '.manage';
-    // }
-
     return array(CONTROLLER_STATUS_OK, 'faq_page' . $suffix);
 }
+
+//
+// GET SECTION
+//
 
 if ($mode == 'update') {
 
@@ -68,6 +50,4 @@ if ($mode == 'update') {
     Tygh::$app['view']->assign([
         'questions'  => $questions
     ]);
-
-    // Tygh::$app['view']->assign('question', $question);
 }
