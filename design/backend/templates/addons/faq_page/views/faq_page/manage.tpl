@@ -58,7 +58,7 @@
 
             {* DISPLAY QUESTION *}
             <td class="{$no_hide_input}" data-th="{__("faq_page.question")}">
-                <a class="row-status" href="{"question.update?question_id=`$question.question_id`"|fn_url}">
+                <a class="row-status" href="{"faq_page.update?question_id=`$question.question_id`"|fn_url}">
                 {$question.question|truncate:50 nofilter}</a>
                 {* {include file="views/companies/components/company_name.tpl" object=$banner} *}
             </td>
@@ -106,7 +106,7 @@
 {/capture}
 {capture name="adv_buttons"}
     {hook name="questions:adv_buttons"}
-    {include file="common/tools.tpl" tool_href="questions.add" prefix="top" hide_tools="true" title=__("add_question") icon="icon-plus"}
+    {include file="common/tools.tpl" tool_href="faq_page.add" prefix="top" hide_tools="true" title=__("add_question") icon="icon-plus"}
     {/hook}
 {/capture}
 
