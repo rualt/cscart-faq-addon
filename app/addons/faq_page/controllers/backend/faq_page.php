@@ -8,15 +8,35 @@ if (!defined('BOOTSTRAP')) {
 
 if ($_SERVER['REQUEST_METHOD']	== 'POST') {
 
+
     //
-    // Add/edit banners
+    // Delete questions
+    //
+    if ($mode == 'm_delete') {
+        foreach ($_REQUEST['question_ids'] as $v) {
+            fn_delete_question_by_id($v);
+        }
+
+        $suffix = '.manage';
+    }
+
+    //
+    // Add/edit questions
     //
     if ($mode == 'update') {
-        $banner_id = fn_faq_page_update_question($_REQUEST['question_data'], $_REQUEST['question_id'], DESCR_SL);
+        $question_id = fn_faq_page_update_question($_REQUEST['question_data'], $_REQUEST['question_id'], DESCR_SL);
 
-        $question_id = $_REQUEST['question_id'];
+        // $question_id = $_REQUEST['question_id'];
 
         $suffix = ".update?question_id=$question_id";
+    }
+
+    if ($mode == 'delete') {
+        if (!empty($_REQUEST['question_id'])) {
+            fn_delete_question_by_id($_REQUEST['question_id']);
+        }
+
+        $suffix = '.manage';
     }
 
     return array(CONTROLLER_STATUS_OK, 'faq_page' . $suffix);

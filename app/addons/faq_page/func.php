@@ -161,6 +161,23 @@ function fn_get_question_data($question_id, $lang_code = CART_LANGUAGE)
     return $question;
 }
 
+/**
+ * Deletes faq question and all related data
+ *
+ * @param int $question_id Question identificator
+ */
+function fn_delete_question_by_id($question_id)
+{
+    if (!empty($question_id)) {
+        db_query("DELETE FROM ?:faq_questions WHERE question_id = ?i", $question_id);
+        db_query("DELETE FROM ?:faq_question_descriptions WHERE question_id = ?i", $question_id);
+
+        // fn_set_hook('delete_banners', $question_id);
+        // Block::instance()->removeDynamicObjectData('questions', $question_id);
+
+    }
+}
+
 //
 // Get question name
 //
