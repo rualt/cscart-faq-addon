@@ -6,33 +6,6 @@ if (!defined('BOOTSTRAP')) {
     die('Access denied');
 }
 
-// $questions = [
-//     [
-//         'question_id' => 1,
-//         'question' => "ВОПРОС 1. Что будет если если если если если если если если да кабы",
-//         'answer' => 'Ответ 1. Будет то то и то то, то то и то то, то то и то то, то то и то',
-//         'author' => 'John Snow',
-//         'position' => 20,
-//         'status' => "A",
-//     ],
-//     [
-//         'question_id' => 2,
-//         'question' => "ВОПРОС 2. Что будет если если если если если если если если да кабы",
-//         'answer' => 'Ответ 2. Будет то то и то то, то то и то то, то то и то то, то то и то',
-//         'author' => 'Tirion Lannister',
-//         'position' => 10,
-//         'status' => "A"
-//     ],
-//     [
-//         'question_id' => 3,
-//         'question' => "ВОПРОС 3. Что будет если если если если если если если если да кабы",
-//         'answer' => 'Ответ 3. Будет то то и то то, то то и то то, то то и то то, то то и то',
-//         'author' => 'Aria Stark',
-//         'position' => 30,
-//         'status' => "A"
-//     ]
-// ];
-
 if ($_SERVER['REQUEST_METHOD']	== 'POST') {
 
     // fn_trusted_vars('banners', 'banner_data');
