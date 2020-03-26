@@ -121,8 +121,8 @@
 {* side bar section *}
 {capture name="sidebar"}
     {hook name="faq_page:manage_sidebar"}
-    {include file="common/saved_search.tpl" dispatch="banners.manage" view_type="banners"}
-    {include file="addons/banners/views/banners/components/banners_search_form.tpl" dispatch="banners.manage"}
+    {include file="common/saved_search.tpl" dispatch="faq_page.manage" view_type="faq_page"}
+    {include file="addons/faq_page/views/faq_page/components/faq_page_search_form.tpl" dispatch="faq_page.manage"}
     {/hook}
 {/capture}
 
