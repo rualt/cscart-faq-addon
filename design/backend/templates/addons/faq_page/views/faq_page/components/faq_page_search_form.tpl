@@ -60,7 +60,7 @@
 
     {/capture}
 
-    {include file="common/advanced_search.tpl" no_adv_link=true simple_search=$smarty.capture.simple_search dispatch=$dispatch view_type="banners"}
+    {include file="common/advanced_search.tpl" no_adv_link=true simple_search=$smarty.capture.simple_search dispatch=$dispatch view_type="faq_page"}
 
 </form>
 
