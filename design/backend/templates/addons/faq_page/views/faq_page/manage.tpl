@@ -36,7 +36,7 @@
 
         {* {hook name="banners:manage_header"}
         {/hook} *}
-
+        <th width="15%"><a class="cm-ajax" href="{"`$c_url`&sort_by=date&sort_order=`$search.sort_order_rev`"|fn_url}" data-ca-target-id={$rev}>{__("creation_date")}{if $search.sort_by == "date"}{$c_icon nofilter}{else}{$c_dummy nofilter}{/if}</a></th>
         <th width="6%" class="mobile-hide">&nbsp;</th>
         <th width="10%" class="right"><a class="cm-ajax" href="{"`$c_url`&sort_by=status&sort_order=`$search.sort_order_rev`"|fn_url}" data-ca-target-id={$rev}>{__("status")}{if $search.sort_by == "status"}{$c_icon nofilter}{else}{$c_dummy nofilter}{/if}</a></th>
     </tr>
@@ -67,6 +67,9 @@
             <td class="nowrap row-status {$no_hide_input} mobile-hide">
                 {$question.author}
             </td>
+
+            {* DISPLAY CREATION DATE *}
+            <td class="nowrap" data-th="{__("creation_date")}">{$question.timestamp|date_format:"`$settings.Appearance.date_format`"}</td>
 
             {* DISPLAY gear tools *}
             <td class="mobile-hide">
