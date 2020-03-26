@@ -98,8 +98,8 @@ name="questions_form" enctype="multipart/form-data">
 {/capture}
 
 {notes}
-    {hook name="banners:update_notes"}
-    {__("banner_details_notes", ["[layouts_href]" => fn_url('block_manager.manage')])}
+    {hook name="faq_page:update_notes"}
+    {__("faq_page.details_notes", ["[layouts_href]" => fn_url('block_manager.manage')])}
     {/hook}
 {/notes}
 

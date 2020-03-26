@@ -32,6 +32,10 @@ msgctxt "Languages::faq_page.author"
 msgid "Author"
 msgstr "Author"
 
+msgctxt "Languages::faq_page.details_notes"
+msgid "Details notes"
+msgstr "This is details notes:</br>This is a simple note</br>This is a <strong>strong</strong> note"
+
 msgctxt "Languages::faq_page.creation_date"
 msgid "Creation date"
 msgstr "Creation date"
