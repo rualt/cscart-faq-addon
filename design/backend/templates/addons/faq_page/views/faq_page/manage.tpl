@@ -28,15 +28,15 @@
         </th>
 
         <th class="mobile-hide">
-            <a class="cm-ajax" href="{"`$c_url`&sort_by=type&sort_order=`$search.sort_order_rev`"|fn_url}" 
+            <a class="cm-ajax" href="{"`$c_url`&sort_by=author&sort_order=`$search.sort_order_rev`"|fn_url}" 
             data-ca-target-id={$rev}>{__("faq_page.author")}
-            {if $search.sort_by == "type"}{$c_icon nofilter}{else}{$c_dummy nofilter}{/if}
+            {if $search.sort_by == "author"}{$c_icon nofilter}{else}{$c_dummy nofilter}{/if}
             </a>
         </th>
 
         {* {hook name="banners:manage_header"}
         {/hook} *}
-        <th width="15%"><a class="cm-ajax" href="{"`$c_url`&sort_by=date&sort_order=`$search.sort_order_rev`"|fn_url}" data-ca-target-id={$rev}>{__("creation_date")}{if $search.sort_by == "date"}{$c_icon nofilter}{else}{$c_dummy nofilter}{/if}</a></th>
+        <th width="15%"><a class="cm-ajax" href="{"`$c_url`&sort_by=timestamp&sort_order=`$search.sort_order_rev`"|fn_url}" data-ca-target-id={$rev}>{__("creation_date")}{if $search.sort_by == "timestamp"}{$c_icon nofilter}{else}{$c_dummy nofilter}{/if}</a></th>
         <th width="6%" class="mobile-hide">&nbsp;</th>
         <th width="10%" class="right"><a class="cm-ajax" href="{"`$c_url`&sort_by=status&sort_order=`$search.sort_order_rev`"|fn_url}" data-ca-target-id={$rev}>{__("status")}{if $search.sort_by == "status"}{$c_icon nofilter}{else}{$c_dummy nofilter}{/if}</a></th>
     </tr>
