@@ -28,6 +28,7 @@ function fn_get_questions($params = array(), $lang_code = CART_LANGUAGE, $items_
         'position' => '?:faq_questions.position',
         'timestamp' => '?:faq_questions.timestamp',
         'name' => '?:faq_question_descriptions.question',
+        'author' => '?:faq_question_descriptions.author',
         'status' => '?:faq_questions.status',
     );
     // fn_print_die($sortings);
@@ -64,6 +65,7 @@ function fn_get_questions($params = array(), $lang_code = CART_LANGUAGE, $items_
 
     $fields = array (
         '?:faq_questions.question_id',
+        '?:faq_questions.timestamp',
         '?:faq_questions.status',
         '?:faq_questions.position',
         '?:faq_question_descriptions.question',
