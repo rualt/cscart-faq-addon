@@ -6,4 +6,7 @@ if (!defined('BOOTSTRAP')) {
     die('Access denied');
 }
 
-fn_print_r('Hello controller');
+if ($mode == 'view') {
+    $test = 'this is a view mode';
+    Tygh::$app['view']->assign('test', $test);
+}
