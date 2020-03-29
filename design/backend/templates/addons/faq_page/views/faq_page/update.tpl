@@ -64,8 +64,6 @@ name="questions_form" enctype="multipart/form-data">
             </div>
         </div>
 
-        {include file="views/localizations/components/select.tpl" data_name="question_data[localization]" data_from=$question.localization}
-
         {include file="common/select_status.tpl" input_name="question_data[status]" id="elm_question_status" obj_id=$id obj=$question hidden=true}
         {* {/hook} *}
     <!--content_general--></div>

@@ -43,7 +43,6 @@ function fn_get_questions($params = array(), $lang_code = CART_LANGUAGE, $items_
     $sorting = db_sort($params, $sortings, 'name', 'asc');
     // fn_print_die($sorting);
 
-    // $condition .= fn_get_localizations_condition('?:faq_questions.localization');
     // $condition .= (AREA == 'A') ? '' : db_quote(' AND (?:faq_questions.type != ?s OR ?:question_images.question_image_id IS NOT NULL)', 'G');
 
     if (!empty($params['item_ids'])) {
@@ -117,7 +116,6 @@ function fn_get_question_data($question_id, $lang_code = CART_LANGUAGE)
         '?:faq_questions.question_id',
         '?:faq_questions.status',
         '?:faq_question_descriptions.question',
-        '?:faq_questions.localization',
         '?:faq_questions.timestamp',
         '?:faq_questions.position',
         '?:faq_question_descriptions.author',
@@ -199,8 +197,6 @@ function fn_faq_page_update_question($data, $question_id, $lang_code = DESCR_SL)
     if (isset($data['timestamp'])) {
         $data['timestamp'] = fn_parse_date($data['timestamp']);
     }
-
-    $data['localization'] = empty($data['localization']) ? '' : fn_implode_localizations($data['localization']);
 
     if (!empty($question_id)) {
         db_query("UPDATE ?:faq_questions SET ?u WHERE question_id = ?i", $data, $question_id);

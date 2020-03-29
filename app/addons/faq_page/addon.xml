@@ -20,11 +20,9 @@
             CREATE TABLE `?:faq_questions` (
                 `question_id` mediumint(8) unsigned NOT NULL auto_increment,
                 `status` char(1) NOT NULL default 'A',
-                `localization` varchar(255) NOT NULL default '',
                 `timestamp` int(11) unsigned NOT NULL default '0',
                 `position` smallint(5) unsigned NOT NULL default '0',
                 PRIMARY KEY  (`question_id`),
-                KEY `localization` (`localization`),
                 KEY `status` (`status`)
             ) Engine=MyISAM DEFAULT CHARSET UTF8;
         </item>
