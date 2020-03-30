@@ -6,9 +6,7 @@ if (!defined('BOOTSTRAP')) {
     die('Access denied');
 }
 
-if ($_SERVER['REQUEST_METHOD']	== 'POST') {
-
-
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //
     // Delete questions
     //
@@ -47,25 +45,26 @@ if ($_SERVER['REQUEST_METHOD']	== 'POST') {
 //
 
 if ($mode == 'update') {
-
     $question = fn_get_question_data($_REQUEST['question_id'], DESCR_SL);
 
     if (empty($question)) {
         return array(CONTROLLER_STATUS_NO_PAGE);
     }
 
-    Registry::set('navigation.tabs', array (
-        'general' => array (
+    Registry::set('navigation.tabs', array(
+        'general' => array(
             'title' => __('general'),
             'js' => true
         ),
     ));
 
     Tygh::$app['view']->assign('question', $question);
-
 } elseif ($mode == 'manage') {
-
-    list($questions, $params) = fn_get_questions($_REQUEST, DESCR_SL, Registry::get('settings.Appearance.admin_elements_per_page'));
+    list($questions, $params) = fn_get_questions(
+        $_REQUEST,
+        DESCR_SL,
+        Registry::get('settings.Appearance.admin_elements_per_page')
+    );
 
     Tygh::$app['view']->assign([
         'questions'  => $questions,
