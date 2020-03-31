@@ -47,7 +47,7 @@ name="questions_form" enctype="multipart/form-data">
         <div class="control-group">
             <label for="elm_question_author" class="control-label cm-required">{__("faq_page.author")}</label>
             <div class="controls">
-            <input type="text" name="question_data[author]" id="elm_question_name" value="{$question.author}" size="25" class="input-large" /></div>
+            <input type="text" name="question_data[author]" id="elm_question_author" value="{$question.author}" size="25" class="input-large"/></div>
         </div>
 
         <div class="control-group">
