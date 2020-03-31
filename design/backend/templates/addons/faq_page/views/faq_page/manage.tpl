@@ -20,6 +20,14 @@
         <th width="1%" class="left mobile-hide">
             {include file="common/check_items.tpl" class="cm-no-hide-input"}
         </th>
+
+        <th>
+            <a class="cm-ajax" href="{"`$c_url`&sort_by=position&sort_order=`$search.sort_order_rev`"|fn_url}" 
+            data-ca-target-id={$rev}>{__("position_short")}
+            {if $search.sort_by == "position"}{$c_icon nofilter}{else}{$c_dummy nofilter}{/if}
+            </a>
+        </th>
+
         <th>
             <a class="cm-ajax" href="{"`$c_url`&sort_by=name&sort_order=`$search.sort_order_rev`"|fn_url}" 
             data-ca-target-id={$rev}>{__("faq_page.question")}
@@ -54,6 +62,11 @@
 
             <td class="left mobile-hide">
                 <input type="checkbox" name="question_ids[]" value="{$question.question_id}" class="cm-item {$no_hide_input}" />
+            </td>
+
+            {* DISPLAY POSITION *}
+            <td class="{$no_hide_input} nowrap row-status mobile-hide" data-th="{__("position_short")}">
+                {$question.position}
             </td>
 
             {* DISPLAY QUESTION *}
