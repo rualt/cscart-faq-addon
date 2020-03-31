@@ -1,0 +1,14 @@
+REPLACE INTO ?:faq_question_descriptions (`question_id`, `question`, `answer`, `author`, `lang_code`) VALUES(1, 'Вопрос1', 'Ответ1', 'Капитан Дэмо', 'ru');
+REPLACE INTO ?:faq_question_descriptions (`question_id`, `question`, `answer`, `author`, `lang_code`) VALUES(2, 'Вопрос2', 'Ответ2', 'Коммандер Шэпард', 'ru');
+REPLACE INTO ?:faq_question_descriptions (`question_id`, `question`, `answer`, `author`, `lang_code`) VALUES(3, 'Вопрос3', 'Ответ3', 'Грегор Эйзенхорг', 'ru');
+REPLACE INTO ?:faq_question_descriptions (`question_id`, `question`, `answer`, `author`, `lang_code`) VALUES(4, 'Вопрос4', 'Ответ4', 'Нереварин', 'ru');
+REPLACE INTO ?:faq_question_descriptions (`question_id`, `question`, `answer`, `author`, `lang_code`) VALUES(5, 'Вопрос5', 'Ответ5', 'Уолтер Вайт', 'ru');
+REPLACE INTO ?:faq_question_descriptions (`question_id`, `question`, `answer`, `author`, `lang_code`) VALUES(6, 'Вопрос6', 'Ответ6', 'Мандалорец', 'ru');
+REPLACE INTO ?:faq_question_descriptions (`question_id`, `question`, `answer`, `author`, `lang_code`) VALUES(7, 'Вопрос7', 'Ответ7', 'Джа Джа Бинкс', 'ru');
+REPLACE INTO ?:faq_question_descriptions (`question_id`, `question`, `answer`, `author`, `lang_code`) VALUES(8, 'Вопрос8', 'Ответ8', 'Гомер Симпсон', 'ru');
+REPLACE INTO ?:faq_question_descriptions (`question_id`, `question`, `answer`, `author`, `lang_code`) VALUES(9, 'Вопрос9', 'Ответ9', 'Лорд Вольдеморт', 'ru');
+REPLACE INTO ?:faq_question_descriptions (`question_id`, `question`, `answer`, `author`, `lang_code`) VALUES(10, 'Вопрос10', 'Ответ10', 'Марио', 'ru');
+REPLACE INTO ?:faq_question_descriptions (`question_id`, `question`, `answer`, `author`, `lang_code`) VALUES(11, 'Вопрос11', 'Ответ11', 'Довакин', 'ru');
+REPLACE INTO ?:faq_question_descriptions (`question_id`, `question`, `answer`, `author`, `lang_code`) VALUES(12, 'Вопрос12', 'Ответ12', 'Капитан Дэмо', 'ru');
+REPLACE INTO ?:faq_question_descriptions (`question_id`, `question`, `answer`, `author`, `lang_code`) VALUES(13, 'Вопрос13', 'Ответ13', 'Капитан Дэмо', 'ru');
+REPLACE INTO ?:faq_question_descriptions (`question_id`, `question`, `answer`, `author`, `lang_code`) VALUES(14, 'Вопрос14', 'Ответ14', 'Капитан Дэмо', 'ru');

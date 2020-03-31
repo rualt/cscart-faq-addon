@@ -36,5 +36,10 @@
                 PRIMARY KEY  (`question_id`,`lang_code`)
             ) Engine=MyISAM DEFAULT CHARSET UTF8;
         </item>
+        <item type="file">database/data.sql</item>
+        <item type="file" table="faq_question_descriptions">database/data_questions.sql</item>
+        <item type="file" lang="ru" table="faq_question_descriptions">database/data_questions_ru.sql</item>
+        <item for="uninstall">DROP TABLE IF EXISTS ?:faq_questions;</item>
+        <item for="uninstall">DROP TABLE IF EXISTS ?:faq_question_descriptions;</item>
     </queries>
 </addon>
