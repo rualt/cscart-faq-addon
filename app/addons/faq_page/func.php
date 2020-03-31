@@ -37,7 +37,7 @@ function fn_get_questions($params = array(), $lang_code = CART_LANGUAGE, $items_
         $limit = db_quote(' LIMIT 0, ?i', $params['limit']);
     }
 
-    $sorting = db_sort($params, $sortings, 'name', 'asc');
+    $sorting = db_sort($params, $sortings, 'position', 'asc');
 
     if (!empty($params['item_ids'])) {
         $condition .= db_quote(' AND ?:faq_questions.question_id IN (?n)', explode(',', $params['item_ids']));
