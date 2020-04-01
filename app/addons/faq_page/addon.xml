@@ -7,6 +7,9 @@
     <auto_install>MULTIVENDOR,ULTIMATE</auto_install>
     <status>active</status>
     <default_language>en</default_language>
+    <compatibility>
+            <dependencies>seo</dependencies>
+    </compatibility>
     <authors>
         <author>
             <name>Ruslan Gazihanov</name>
@@ -36,9 +39,12 @@
                 PRIMARY KEY  (`question_id`,`lang_code`)
             ) Engine=MyISAM DEFAULT CHARSET UTF8;
         </item>
+        <item for="install">REPLACE INTO `?:seo_names` (name, type, dispatch, lang_code) VALUES ('faq-page', 's', 'faq_page.view', 'en')</item>
+        <item for="install">REPLACE INTO `?:seo_names` (name, type, dispatch, lang_code) VALUES ('faq-page-ru', 's', 'faq_page.view', 'ru')</item>
         <item type="file">database/data.sql</item>
         <item type="file" table="faq_question_descriptions">database/data_questions.sql</item>
         <item type="file" lang="ru" table="faq_question_descriptions">database/data_questions_ru.sql</item>
+        <item for="uninstall">DELETE FROM ?:seo_names WHERE dispatch = 'faq_page.view'</item>
         <item for="uninstall">DROP TABLE IF EXISTS ?:faq_questions;</item>
         <item for="uninstall">DROP TABLE IF EXISTS ?:faq_question_descriptions;</item>
     </queries>
