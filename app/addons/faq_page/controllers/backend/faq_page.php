@@ -24,11 +24,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($mode == 'update') {
         $question_id = fn_faq_page_update_question($_REQUEST['question_data'], $_REQUEST['question_id'], DESCR_SL);
 
-        // $question_id = $_REQUEST['question_id'];
-
         $suffix = ".update?question_id=$question_id";
     }
 
+    //
+    // Delete question
+    //
     if ($mode == 'delete') {
         if (!empty($_REQUEST['question_id'])) {
             fn_delete_question_by_id($_REQUEST['question_id']);
@@ -39,10 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     return array(CONTROLLER_STATUS_OK, 'faq_page' . $suffix);
 }
-
-//
-// GET SECTION
-//
 
 if ($mode == 'update') {
     $question = fn_get_question_data($_REQUEST['question_id'], DESCR_SL);
