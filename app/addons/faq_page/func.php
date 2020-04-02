@@ -9,6 +9,15 @@ if (!defined('BOOTSTRAP')) {
     die('Access denied');
 }
 
+/**
+ * Gets questions list by search params
+ *
+ * @param array  $params         Question search params
+ * @param string $lang_code      2 letters language code
+ * @param int    $items_per_page Items per page
+ *
+ * @return array Questions list and Search params
+ */
 function fn_get_questions($params = array(), $lang_code = CART_LANGUAGE, $items_per_page = 0)
 {
     // Set default values to input params
@@ -70,6 +79,18 @@ function fn_get_questions($params = array(), $lang_code = CART_LANGUAGE, $items_
         '?:faq_question_descriptions.author',
     );
 
+    /**
+     * This hook allows you to change parameters of the question selection before making an SQL query.
+     *
+     * @param array        $params    The parameters of the user's query (limit, period, item_ids, etc)
+     * @param string       $condition The conditions of the selection
+     * @param string       $sorting   Sorting (ask, desc)
+     * @param string       $limit     The LIMIT of the returned rows
+     * @param string       $lang_code Language code
+     * @param array        $fields    Selected fields
+     */
+    fn_set_hook('get_faq_page_questions', $params, $condition, $sorting, $limit, $lang_code, $fields);
+
     $join .= db_quote(
         ' LEFT JOIN ?:faq_question_descriptions ON ?:faq_question_descriptions.question_id = 
         ?:faq_questions.question_id AND ?:faq_question_descriptions.lang_code = ?s',
@@ -96,11 +117,26 @@ function fn_get_questions($params = array(), $lang_code = CART_LANGUAGE, $items_
         $questions = fn_sort_by_ids($questions, explode(',', $params['item_ids']), 'question_id');
     }
 
-    // fn_set_hook('get_questions_post', $questions, $params);
+    /**
+     * This hook allows you to change questions list data and params after making an SQL query
+     *
+     * @param array $questions Data of all questions
+     * @param array $params    Parameters of the questions view (items per page, sort order, status, etc)
+     */
+    fn_set_hook('get_faq_page_questions_post', $questions, $params);
 
     return array($questions, $params);
 }
 
+
+/**
+ * Gets specific question data by id
+ *
+ * @param int    $question_id   Question ID
+ * @param string $lang_code     2 letters language code
+ *
+ * @return array Question data array
+ */
 function fn_get_question_data($question_id, $lang_code = CART_LANGUAGE)
 {
     // Unset all SQL variables
@@ -130,16 +166,16 @@ function fn_get_question_data($question_id, $lang_code = CART_LANGUAGE)
     $condition = db_quote("WHERE ?:faq_questions.question_id = ?i", $question_id);
     $condition .= (AREA == 'A') ? '' : " AND ?:faq_questions.status IN ('A', 'H') ";
 
-    // /**
-    //  * Prepare params for question data SQL query
-    //  *
-    //  * @param int   $question_id question ID
-    //  * @param str   $lang_code Language code
-    //  * @param array $fields    Fields list
-    //  * @param array $joins     Joins list
-    //  * @param str   $condition Conditions query
-    //  */
-    // fn_set_hook('get_question_data', $question_id, $lang_code, $fields, $joins, $condition);
+    /**
+     * Prepare params for question data SQL query
+     *
+     * @param int    $question_id Question ID
+     * @param string $lang_code   Language code
+     * @param array  $fields      Fields list
+     * @param array  $joins       Joins list
+     * @param string $condition   Conditions query
+     */
+    fn_set_hook('get_faq_page_question_data', $question_id, $lang_code, $fields, $joins, $condition);
 
     $question = db_get_row(
         "SELECT "
@@ -149,22 +185,22 @@ function fn_get_question_data($question_id, $lang_code = CART_LANGUAGE)
         ." $condition"
     );
 
-    // /**
-    //  * Post processing of question data
-    //  *
-    //  * @param int   $question_id question ID
-    //  * @param str   $lang_code Language code
-    //  * @param array $question    question data
-    //  */
-    // fn_set_hook('get_question_data_post', $question_id, $lang_code, $question);
+    /**
+     * Post processing of question data
+     *
+     * @param int    $question_id Question ID
+     * @param string $lang_code   Language code
+     * @param array  $question    Question data
+     */
+    fn_set_hook('get_faq_page_question_data_post', $question_id, $lang_code, $question);
 
     return $question;
 }
 
 /**
- * Deletes faq question and all related data
+ * Deletes question and all related data
  *
- * @param int $question_id Question identificator
+ * @param int $question_id Question ID
  */
 function fn_delete_question_by_id($question_id)
 {
@@ -172,11 +208,24 @@ function fn_delete_question_by_id($question_id)
         db_query("DELETE FROM ?:faq_questions WHERE question_id = ?i", $question_id);
         db_query("DELETE FROM ?:faq_question_descriptions WHERE question_id = ?i", $question_id);
 
-        // fn_set_hook('delete_banners', $question_id);
-        // Block::instance()->removeDynamicObjectData('questions', $question_id);
+        /**
+         * Hook after delete question by id
+         *
+         * @param int $question_id Question ID
+         */
+        fn_set_hook('delete_faq_page_question', $question_id);
     }
 }
 
+/**
+ * Updates or creates new question
+ *
+ * @param array  $data        Question data array
+ * @param int    $question_id Question ID
+ * @param string $lang_code   2 letters language code
+ *
+ * @return int   Question ID
+ */
 function fn_faq_page_update_question($data, $question_id, $lang_code = DESCR_SL)
 {
     SecurityHelper::sanitizeObjectData('question', $data);
