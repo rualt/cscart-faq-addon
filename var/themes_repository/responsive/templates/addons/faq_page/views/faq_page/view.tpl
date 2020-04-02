@@ -12,7 +12,7 @@
             <details>
                 <summary>{$question.question}</summary>
                 </br>
-                <p>{$question.answer}</p>
+                <p>{$question.answer nofilter}</p>
             </details>
         </h3>
     </p>
