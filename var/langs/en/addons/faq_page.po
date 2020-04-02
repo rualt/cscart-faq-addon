@@ -32,6 +32,10 @@ msgctxt "Languages::faq_page.author"
 msgid "Author"
 msgstr "Author"
 
+msgctxt "Languages::faq_page.new_question"
+msgid "New question"
+msgstr "New question"
+
 msgctxt "Languages::faq_page.editing_question"
 msgid "Editing question"
 msgstr "Editing question"
