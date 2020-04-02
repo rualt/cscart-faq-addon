@@ -103,9 +103,9 @@ function fn_get_faq_page_questions($params = array(), $lang_code = CART_LANGUAGE
     }
 
     $questions = db_get_hash_array(
-        "SELECT ?p FROM ?:faq_questions " .
-        $join .
-        "WHERE 1 ?p ?p ?p",
+        "SELECT ?p FROM ?:faq_questions "
+        . $join
+        . 'WHERE 1 ?p ?p ?p',
         'question_id',
         implode(', ', $fields),
         $condition,
