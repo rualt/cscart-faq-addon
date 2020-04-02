@@ -7,6 +7,9 @@ if (!defined('BOOTSTRAP')) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    fn_trusted_vars('questions', 'question_data');
+    $suffix = '';
+
     //
     // Delete questions
     //
