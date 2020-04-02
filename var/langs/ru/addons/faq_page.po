@@ -46,11 +46,3 @@ msgstr "Страницу FAQ на витрине можно найти <a href=\
 В поле <strong>Поз.</strong> укажите позицию FAQ ссылки среди остальных пунктов меню - чем выше значение, тем пункт ближе к концу списка.<br />
 В поле <strong>URL</strong> добавьте адрес страницы <em>/faq-page</em>.<br /><br />
 Все готово! Ссылка на страницу должна появиться в выбранном меню."
-
-msgctxt "Languages::faq_page.creation_date"
-msgid "Creation date"
-msgstr "Дата создания"
-
-msgctxt "Languages::faq_page.status"
-msgid "Status"
-msgstr "Статус"

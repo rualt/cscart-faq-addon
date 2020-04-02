@@ -47,10 +47,3 @@ In the <strong>Pos.</strong> field specify the position of the FAQ link among ot
 In the <strong>URL</strong> field add the address of the page: <em>/faq-page</em><br /> <br />
 Everything is ready! The link to the page should appear in the selected menu."
 
-msgctxt "Languages::faq_page.creation_date"
-msgid "Creation date"
-msgstr "Creation date"
-
-msgctxt "Languages::faq_page.status"
-msgid "Status"
-msgstr "Status"
