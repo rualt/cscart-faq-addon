@@ -177,25 +177,6 @@ function fn_delete_question_by_id($question_id)
     }
 }
 
-//
-// Get question name
-//
-function fn_get_question_name($question_id, $lang_code = CART_LANGUAGE)
-{
-    if (!empty($question_id)) {
-        return db_get_field(
-            "SELECT question"
-            . ' FROM ?:faq_question_descriptions'
-            . ' WHERE question_id = ?i'
-            . ' AND lang_code = ?s',
-            $question_id,
-            $lang_code
-        );
-    }
-
-    return false;
-}
-
 function fn_faq_page_update_question($data, $question_id, $lang_code = DESCR_SL)
 {
     SecurityHelper::sanitizeObjectData('question', $data);
