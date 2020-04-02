@@ -7,7 +7,7 @@
 
 {** banners section **}
 
-{$allow_save = $question|fn_allow_save_object:"question"}
+{$allow_save = $question|fn_allow_save_object:"questions"}
 {$hide_inputs = ""|fn_check_form_permissions}
 {* {assign var="b_type" value=$banner.type|default:"G"} *}
 
@@ -64,7 +64,7 @@ name="questions_form" enctype="multipart/form-data">
             </div>
         </div>
 
-        {include file="common/select_status.tpl" input_name="question_data[status]" id="elm_question_status" obj_id=$id obj=$question hidden=true}
+        {include file="common/select_status.tpl" input_name="question_data[status]" id="elm_question_status" obj_id=$id obj=$question hidden=false}
         {* {/hook} *}
     <!--content_general--></div>
 

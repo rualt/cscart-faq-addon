@@ -99,7 +99,7 @@
 
             {* DISPLAY status*}
             <td class="right" data-th="{__("status")}">
-                {include file="common/select_popup.tpl" id=$question.question_id status=$question.status hidden=true object_id_name="question_id" table="faq_questions" popup_additional_class="`$no_hide_input` dropleft"}
+                {include file="common/select_popup.tpl" id=$question.question_id status=$question.status hidden=false object_id_name="question_id" table="faq_questions" popup_additional_class="`$no_hide_input` dropleft"}
             </td>
         </tr>
 
