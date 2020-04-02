@@ -32,9 +32,20 @@ msgctxt "Languages::faq_page.author"
 msgid "Author"
 msgstr "Author"
 
+msgctxt "Languages::faq_page.editing_question"
+msgid "Editing question"
+msgstr "Editing question"
+
 msgctxt "Languages::faq_page.details_notes"
 msgid "Details notes"
-msgstr "This is details notes:</br>This is a simple note</br>This is a <strong>strong</strong> note"
+msgstr "The FAQ page on the storefront can be found <a href=\"/faq-page\" target=\"_blank\">here</a>.<br/>
+You can add a link to the FAQ page through the <strong>Menu Editor</strong>. <br /> <br />
+Go to the page <strong>Design → Menus</strong>, select the menu group to which you would like to add a link, click on the <strong>Add item</strong> button and select the name of a new menu item, for example 'FAQ'. <br /> <br />
+Click on the newly created item.<br />
+In the <strong>Parent item</strong> field, select <em>Root level</em>. <br />
+In the <strong>Pos.</strong> field specify the position of the FAQ link among other menu items - the higher the value, the closer to the end of the list.<br />
+In the <strong>URL</strong> field add the address of the page: <em>/faq-page</em><br /> <br />
+Everything is ready! The link to the page should appear in the selected menu."
 
 msgctxt "Languages::faq_page.creation_date"
 msgid "Creation date"

@@ -32,9 +32,20 @@ msgctxt "Languages::faq_page.author"
 msgid "Author"
 msgstr "Автор"
 
+msgctxt "Languages::faq_page.editing_question"
+msgid "Editing question"
+msgstr "Редактирование вопроса"
+
 msgctxt "Languages::faq_page.details_notes"
 msgid "Details notes"
-msgstr "Это заметки:</br>Это простая заметка</br>Это <strong>strong</strong> заметка"
+msgstr "Страницу FAQ на витрине можно найти <a href=\"/faq-page\" target=\"_blank\">здесь</a>.<br />
+Добавить ссылку на страницу FAQ вы сможете через <strong>Редактор меню</strong>.<br /><br />
+Перейдите на страницу <strong>Дизайн → Меню</strong>, выберите группу меню, в которую вы бы хотели добавить ссылку, нажмите на кнопку <strong>Добавить элемент</strong> и выберете имя нового пункта меню, например ‘FAQ’.<br /><br />
+Нажмите на вновь созданный элемент.<br />
+В поле <strong>Родительский элемент</strong> выберете <em>‘Корневой уровень’</em>.<br />
+В поле <strong>Поз.</strong> укажите позицию FAQ ссылки среди остальных пунктов меню - чем выше значение, тем пункт ближе к концу списка.<br />
+В поле <strong>URL</strong> добавьте адрес страницы <em>/faq-page</em>.<br /><br />
+Все готово! Ссылка на страницу должна появиться в выбранном меню."
 
 msgctxt "Languages::faq_page.creation_date"
 msgid "Creation date"
