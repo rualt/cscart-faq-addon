@@ -18,7 +18,7 @@ if (!defined('BOOTSTRAP')) {
  *
  * @return array Questions list and Search params
  */
-function fn_get_questions($params = array(), $lang_code = CART_LANGUAGE, $items_per_page = 0)
+function fn_get_faq_page_questions($params = array(), $lang_code = CART_LANGUAGE, $items_per_page = 0)
 {
     // Set default values to input params
     $default_params = array(
@@ -137,7 +137,7 @@ function fn_get_questions($params = array(), $lang_code = CART_LANGUAGE, $items_
  *
  * @return array Question data array
  */
-function fn_get_question_data($question_id, $lang_code = CART_LANGUAGE)
+function fn_get_faq_page_question_data($question_id, $lang_code = CART_LANGUAGE)
 {
     // Unset all SQL variables
     $fields = $joins = array();
@@ -202,7 +202,7 @@ function fn_get_question_data($question_id, $lang_code = CART_LANGUAGE)
  *
  * @param int $question_id Question ID
  */
-function fn_delete_question_by_id($question_id)
+function fn_delete_faq_page_question($question_id)
 {
     if (!empty($question_id)) {
         db_query("DELETE FROM ?:faq_questions WHERE question_id = ?i", $question_id);
