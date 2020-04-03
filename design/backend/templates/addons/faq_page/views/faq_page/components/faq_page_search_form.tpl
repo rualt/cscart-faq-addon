@@ -35,7 +35,7 @@
 
         <div class="sidebar-field">
             <label for="elm_status">{__("status")}</label>
-            {assign var="items_status" value=""|fn_get_default_statuses:true}
+            {assign var="items_status" value=""|fn_get_default_statuses:false}
             <div class="controls">
                 <select name="status" id="elm_status">
                     <option value="">{__("all")}</option>
@@ -50,7 +50,7 @@
 
     {/capture}
 
-    {include file="common/advanced_search.tpl" no_adv_link=true simple_search=$smarty.capture.simple_search dispatch=$dispatch view_type="faq_page"}
+    {include file="common/advanced_search.tpl" no_adv_link=true hidden=false simple_search=$smarty.capture.simple_search dispatch=$dispatch view_type="faq_page"}
 
 </form>
 
