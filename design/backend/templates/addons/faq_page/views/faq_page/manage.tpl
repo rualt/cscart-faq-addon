@@ -1,4 +1,4 @@
-{** questions section **}
+{** faq_page questions section **}
 
 {capture name="mainbox"}
 
@@ -42,8 +42,9 @@
             </a>
         </th>
 
-        {* {hook name="banners:manage_header"}
-        {/hook} *}
+        {hook name="faq_page:manage_header"}
+        {/hook}
+
         <th width="15%"><a class="cm-ajax" href="{"`$c_url`&sort_by=timestamp&sort_order=`$search.sort_order_rev`"|fn_url}" data-ca-target-id={$rev}>{__("creation_date")}{if $search.sort_by == "timestamp"}{$c_icon nofilter}{else}{$c_dummy nofilter}{/if}</a></th>
         <th width="6%" class="mobile-hide">&nbsp;</th>
         <th width="10%" class="right"><a class="cm-ajax" href="{"`$c_url`&sort_by=status&sort_order=`$search.sort_order_rev`"|fn_url}" data-ca-target-id={$rev}>{__("status")}{if $search.sort_by == "status"}{$c_icon nofilter}{else}{$c_dummy nofilter}{/if}</a></th>
@@ -73,13 +74,15 @@
             <td class="{$no_hide_input}" data-th="{__("faq_page.question")}">
                 <a class="row-status" href="{"faq_page.update?question_id=`$question.question_id`"|fn_url}">
                 {$question.question|truncate:50 nofilter}</a>
-                {* {include file="views/companies/components/company_name.tpl" object=$banner} *}
             </td>
 
             {* DISPLAY AUTHOR *}
             <td class="nowrap row-status {$no_hide_input} mobile-hide">
                 {$question.author}
             </td>
+
+            {hook name="faq_page:manage_data"}
+            {/hook}
 
             {* DISPLAY CREATION DATE *}
             <td class="nowrap" data-th="{__("creation_date")}">{$question.timestamp|date_format:"`$settings.Appearance.date_format`"}</td>
@@ -121,7 +124,7 @@
     {dropdown content=$smarty.capture.tools_list class="mobile-hide"}
 {/capture}
 {capture name="adv_buttons"}
-    {hook name="questions:adv_buttons"}
+    {hook name="faq_page:adv_buttons"}
     {include file="common/tools.tpl" tool_href="faq_page.add" prefix="top" hide_tools="true" title=__("add_question") icon="icon-plus"}
     {/hook}
 {/capture}

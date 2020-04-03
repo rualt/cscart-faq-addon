@@ -5,11 +5,10 @@
 {/if}
 
 
-{** banners section **}
+{** faq_page questions section **}
 
 {$allow_save = $question|fn_allow_save_object:"questions"}
 {$hide_inputs = ""|fn_check_form_permissions}
-{* {assign var="b_type" value=$banner.type|default:"G"} *}
 
 {capture name="mainbox"}
 
@@ -22,20 +21,12 @@ name="questions_form" enctype="multipart/form-data">
 {capture name="tabsbox"}
 
     <div id="content_general">
-        {* {hook name="banners:general_content"} *}
+        {hook name="faq_page:general_content"}
         <div class="control-group">
             <label for="elm_question_name" class="control-label cm-required">{__("faq_page.question")}</label>
             <div class="controls">
             <input type="text" name="question_data[question]" id="elm_question_name" value="{$question.question}" size="25" class="input-large" /></div>
         </div>
-
-        {* {if "ULTIMATE"|fn_allowed_for}
-            {include file="views/companies/components/company_field.tpl"
-                name="question_data[company_id]"
-                id="question_data_company_id"
-                selected=$banner.company_id
-            }
-        {/if} *}
 
         <div class="control-group">
             <label class="control-label cm-required" for="elm_question_answer">{__("faq_page.answer")}</label>
@@ -65,16 +56,16 @@ name="questions_form" enctype="multipart/form-data">
         </div>
 
         {include file="common/select_status.tpl" input_name="question_data[status]" id="elm_question_status" obj_id=$id obj=$question hidden=false}
-        {* {/hook} *}
+        {/hook}
     <!--content_general--></div>
 
     <div id="content_addons" class="hidden clearfix">
-        {* {hook name="banners:detailed_content"}
-        {/hook} *}
+        {hook name="faq_page:detailed_content"}
+        {/hook}
     <!--content_addons--></div>
 
-    {* {hook name="banners:tabs_content"}
-    {/hook} *}
+    {hook name="faq_page:tabs_content"}
+    {/hook}
 
 {/capture}
 {include file="common/tabsbox.tpl" content=$smarty.capture.tabsbox active_tab=$smarty.request.selected_section track=true}
@@ -97,7 +88,7 @@ name="questions_form" enctype="multipart/form-data">
 
 {notes}
     {hook name="faq_page:update_notes"}
-    {__("faq_page.details_notes", ["[layouts_href]" => fn_url('block_manager.manage')])}
+    {__("faq_page.details_notes")}
     {/hook}
 {/notes}
 
@@ -115,5 +106,3 @@ name="questions_form" enctype="multipart/form-data">
     content=$smarty.capture.mainbox
     buttons=$smarty.capture.buttons
     select_languages=true}
-
-{** banner section **}
