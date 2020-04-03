@@ -10,6 +10,8 @@
     <compatibility>
             <dependencies>seo</dependencies>
     </compatibility>
+    <supplier>Rualt</supplier>
+    <supplier_link>https://github.com/rualt</supplier_link>
     <authors>
         <author>
             <name>Ruslan Gazihanov</name>
