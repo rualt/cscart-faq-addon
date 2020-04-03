@@ -34,10 +34,10 @@
         {/hook}
 
         <div class="sidebar-field">
-            <label for="elm_type">{__("status")}</label>
+            <label for="elm_status">{__("status")}</label>
             {assign var="items_status" value=""|fn_get_default_statuses:true}
             <div class="controls">
-                <select name="status" id="elm_type">
+                <select name="status" id="elm_status">
                     <option value="">{__("all")}</option>
                     {foreach from=$items_status key=key item=status}
                         <option value="{$key}" {if $search.status == $key}selected="selected"{/if}>{$status}</option>
