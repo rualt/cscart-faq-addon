@@ -10,7 +10,7 @@ msgstr "FAQ (Frequently asked questions)"
 
 msgctxt "Addons::description::faq_page"
 msgid "FAQ Page description"
-msgstr "Addon description"
+msgstr "Allows you to create questions and answers for your FAQ page"
 
 msgctxt "Languages::faq"
 msgid "FAQ"
@@ -18,7 +18,7 @@ msgstr "FAQ"
 
 msgctxt "Languages::faq_menu_description"
 msgid "This is a menu description"
-msgstr "This is a menu description"
+msgstr "Create questions and answers page that can be placed on the storefront."
 
 msgctxt "Languages::faq_page.question"
 msgid "Question"
