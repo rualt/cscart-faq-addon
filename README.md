@@ -3,18 +3,22 @@
 This CS-Cart add-on allows you to add/edit frequently asked questions and answers at the admin panel 
 and display FAQ page on the storefront
 
-#### Product page
+#### FAQ page
+
 ![FAQ page](https://i.ibb.co/5h14M3V/FAQ-storefront.png "FAQ page")
+
 #### Add-on menu
+
 ![Add-on menu location](https://i.ibb.co/23fFYR7/Screenshot2.png "Where to find add-on at admin panel")
 
-Language: 
-- English
-- Russian
+Language:
+-English
+-Russian
 
 #### This module does not make any changes to the platform core.
 
-#### Requirements: 
+#### Requirements:
+
 CS-Cart SEO add-on
 
 [Installation Details](https://www.cs-cart.ru/docs/latest/user_guide/addons/1manage_addons.html#id2)
