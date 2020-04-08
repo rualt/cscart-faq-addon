@@ -50,10 +50,10 @@
         <th width="10%" class="right"><a class="cm-ajax" href="{"`$c_url`&sort_by=status&sort_order=`$search.sort_order_rev`"|fn_url}" data-ca-target-id={$rev}>{__("status")}{if $search.sort_by == "status"}{$c_icon nofilter}{else}{$c_dummy nofilter}{/if}</a></th>
     </tr>
     </thead>
-    {foreach from=$questions item=question}
+    {foreach $questions as $question}
 
         <tr class="cm-row-status-{$question.status|lower}">
-            {assign var="allow_save" value=$question|fn_allow_save_object:"questions"}
+            {$allow_save = fn_allow_save_object($question, 'questions')}
 
             {if $allow_save}
                 {assign var="no_hide_input" value="cm-no-hide-input"}

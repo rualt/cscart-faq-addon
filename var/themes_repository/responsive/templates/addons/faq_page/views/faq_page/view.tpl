@@ -6,7 +6,7 @@
 
 </br>
 
-{foreach from=$questions item=question}
+{foreach $questions as $question}
     <p>
         <h3>
             <details>
