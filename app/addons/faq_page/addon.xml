@@ -2,7 +2,7 @@
 <addon scheme="3.0">
     <id>faq_page</id>
     <version>1.0</version>
-    <priority>4294967294</priority>
+    <priority>3000</priority>
     <position>0</position>
     <auto_install>MULTIVENDOR,ULTIMATE</auto_install>
     <status>active</status>
