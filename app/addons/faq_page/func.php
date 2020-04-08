@@ -5,9 +5,7 @@ use Tygh\Languages\Languages;
 use Tygh\BlockManager\Block;
 use Tygh\Tools\SecurityHelper;
 
-if (!defined('BOOTSTRAP')) {
-    die('Access denied');
-}
+defined('BOOTSTRAP') or die('Access denied');
 
 /**
  * Gets questions list by search params
@@ -182,7 +180,7 @@ function fn_get_faq_page_question_data($question_id, $lang_code = CART_LANGUAGE)
         . implode(", ", $fields)
         . " FROM ?:faq_questions "
         . implode(" ", $joins)
-        ." $condition"
+        . " $condition"
     );
 
     /**

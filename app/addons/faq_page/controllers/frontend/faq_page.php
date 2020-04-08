@@ -2,9 +2,7 @@
 
 use Tygh\Registry;
 
-if (!defined('BOOTSTRAP')) {
-    die('Access denied');
-}
+defined('BOOTSTRAP') or die('Access denied');
 
 if ($mode == 'view') {
     fn_add_breadcrumb(__('faq'));
