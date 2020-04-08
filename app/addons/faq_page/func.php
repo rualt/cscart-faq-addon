@@ -154,7 +154,7 @@ function fn_get_faq_page_question_data($question_id, $lang_code = CART_LANGUAGE)
     );
 
     $condition = db_quote('WHERE ?:faq_questions.question_id = ?i', $question_id);
-    $condition .= (AREA == 'A') ? '' : " AND ?:faq_questions.status IN ('A', 'H') ";
+    $condition .= (AREA == 'A') ? '' : " AND ?:faq_questions.status = 'A' ";
 
     /**
      * Prepare params for question data SQL query
@@ -174,6 +174,7 @@ function fn_get_faq_page_question_data($question_id, $lang_code = CART_LANGUAGE)
         . implode(' ', $joins)
         . " $condition"
     );
+    fn_print_r($question, $condition);
 
     /**
      * Post processing of question data
