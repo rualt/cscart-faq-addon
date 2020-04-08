@@ -10,7 +10,7 @@ if ($mode == 'view') {
     list($questions, $params) = fn_get_faq_page_questions(
         $_REQUEST,
         DESCR_SL,
-        Registry::get('settings.Appearance.admin_elements_per_page')
+        Registry::get('settings.Appearance.elements_per_page')
     );
 
     Tygh::$app['view']->assign([
