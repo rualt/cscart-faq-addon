@@ -46,10 +46,6 @@ function fn_get_faq_page_questions($params = [], $lang_code = CART_LANGUAGE, $it
 
     $sorting = db_sort($params, $sortings, 'position', 'asc');
 
-    if (!empty($params['item_ids'])) {
-        $condition .= db_quote(' AND ?:faq_questions.question_id IN (?n)', explode(',', $params['item_ids']));
-    }
-
     if (!empty($params['name'])) {
         $condition .= db_quote(' AND ?:faq_question_descriptions.question LIKE ?l', '%' . trim($params['name']) . '%');
     }
@@ -80,7 +76,7 @@ function fn_get_faq_page_questions($params = [], $lang_code = CART_LANGUAGE, $it
     /**
      * This hook allows you to change parameters of the question selection before making an SQL query.
      *
-     * @param array        $params    The parameters of the user's query (limit, period, item_ids, etc)
+     * @param array        $params    The parameters of the user's query (limit, period, etc)
      * @param string       $condition The conditions of the selection
      * @param string       $sorting   Sorting (ask, desc)
      * @param string       $limit     The LIMIT of the returned rows
@@ -110,10 +106,6 @@ function fn_get_faq_page_questions($params = [], $lang_code = CART_LANGUAGE, $it
         $sorting,
         $limit
     );
-
-    if (!empty($params['item_ids'])) {
-        $questions = fn_sort_by_ids($questions, explode(',', $params['item_ids']), 'question_id');
-    }
 
     /**
      * This hook allows you to change questions list data and params after making an SQL query
