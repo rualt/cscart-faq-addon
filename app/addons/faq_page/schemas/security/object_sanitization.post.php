@@ -2,11 +2,11 @@
 
 use Tygh\Tools\SecurityHelper;
 
-$schema['question'] = array(
-    SecurityHelper::SCHEMA_SECTION_FIELD_RULES => array(
+$schema['question'] = [
+    SecurityHelper::SCHEMA_SECTION_FIELD_RULES => [
         'question' => SecurityHelper::ACTION_REMOVE_HTML,
         'answer' => SecurityHelper::ACTION_SANITIZE_HTML
-    )
-);
+    ]
+];
 
 return $schema;

@@ -16,13 +16,13 @@ defined('BOOTSTRAP') or die('Access denied');
  *
  * @return array Questions list and Search params
  */
-function fn_get_faq_page_questions($params = array(), $lang_code = CART_LANGUAGE, $items_per_page = 0)
+function fn_get_faq_page_questions($params = [], $lang_code = CART_LANGUAGE, $items_per_page = 0)
 {
     // Set default values to input params
-    $default_params = array(
+    $default_params = [
         'page' => 1,
         'items_per_page' => $items_per_page
-    );
+    ];
 
     $params = array_merge($default_params, $params);
 
@@ -30,13 +30,13 @@ function fn_get_faq_page_questions($params = array(), $lang_code = CART_LANGUAGE
         $params['status'] = 'A';
     }
 
-    $sortings = array(
+    $sortings = [
         'position' => '?:faq_questions.position',
         'timestamp' => '?:faq_questions.timestamp',
         'name' => '?:faq_question_descriptions.question',
         'author' => '?:faq_question_descriptions.author',
         'status' => '?:faq_questions.status',
-    );
+    ];
 
     $condition = $limit = $join = '';
 
@@ -67,7 +67,7 @@ function fn_get_faq_page_questions($params = array(), $lang_code = CART_LANGUAGE
         );
     }
 
-    $fields = array(
+    $fields = [
         '?:faq_questions.question_id',
         '?:faq_questions.timestamp',
         '?:faq_questions.status',
@@ -75,7 +75,7 @@ function fn_get_faq_page_questions($params = array(), $lang_code = CART_LANGUAGE
         '?:faq_question_descriptions.question',
         '?:faq_question_descriptions.answer',
         '?:faq_question_descriptions.author',
-    );
+    ];
 
     /**
      * This hook allows you to change parameters of the question selection before making an SQL query.
@@ -123,7 +123,7 @@ function fn_get_faq_page_questions($params = array(), $lang_code = CART_LANGUAGE
      */
     fn_set_hook('get_faq_page_questions_post', $questions, $params);
 
-    return array($questions, $params);
+    return [$questions, $params];
 }
 
 
@@ -138,10 +138,10 @@ function fn_get_faq_page_questions($params = array(), $lang_code = CART_LANGUAGE
 function fn_get_faq_page_question_data($question_id, $lang_code = CART_LANGUAGE)
 {
     // Unset all SQL variables
-    $fields = $joins = array();
+    $fields = $joins = [];
     $condition = '';
 
-    $fields = array(
+    $fields = [
         '?:faq_questions.question_id',
         '?:faq_questions.status',
         '?:faq_question_descriptions.question',
@@ -149,7 +149,7 @@ function fn_get_faq_page_question_data($question_id, $lang_code = CART_LANGUAGE)
         '?:faq_questions.position',
         '?:faq_question_descriptions.author',
         '?:faq_question_descriptions.answer',
-    );
+    ];
 
     if (fn_allowed_for('ULTIMATE')) {
         $fields[] = '?:faq_questions.company_id as company_id';

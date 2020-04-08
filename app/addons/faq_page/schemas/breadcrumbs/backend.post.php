@@ -1,10 +1,10 @@
 <?php
 
-$schema['faq_page.update'] = array (
-    array (
+$schema['faq_page.update'] = [
+    [
         'title' => 'faq',
         'link' => 'faq_page.manage'
-    )
-);
+    ]
+];
 
 return $schema;

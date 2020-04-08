@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $suffix = '.manage';
     }
 
-    return array(CONTROLLER_STATUS_OK, 'faq_page' . $suffix);
+    return [CONTROLLER_STATUS_OK, 'faq_page' . $suffix];
 }
 
 //
@@ -52,15 +52,15 @@ if ($mode == 'update') {
     $question = fn_get_faq_page_question_data($_REQUEST['question_id'], DESCR_SL);
 
     if (empty($question)) {
-        return array(CONTROLLER_STATUS_NO_PAGE);
+        return [CONTROLLER_STATUS_NO_PAGE];
     }
 
-    Registry::set('navigation.tabs', array(
-        'general' => array(
+    Registry::set('navigation.tabs', [
+        'general' => [
             'title' => __('general'),
             'js' => true
-        ),
-    ));
+        ]
+    ]);
 
     Tygh::$app['view']->assign('question', $question);
 } elseif ($mode == 'manage') {

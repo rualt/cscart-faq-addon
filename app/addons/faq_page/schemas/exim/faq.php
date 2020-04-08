@@ -2,67 +2,67 @@
 
 use Tygh\Registry;
 
-$schema = array(
+$schema = [
     'section' => 'faq',
     'pattern_id' => 'faq',
     'name' => __('faq'),
-    'key' => array('question_id'),
+    'key' => ['question_id'],
     'order' => 5,
     'table' => 'faq_questions',
-    'references' => array(
-        'faq_question_descriptions' => array(
-            'reference_fields' => array('question_id' => '#key', 'lang_code' => '#lang_code'),
+    'references' => [
+        'faq_question_descriptions' => [
+            'reference_fields' => ['question_id' => '#key', 'lang_code' => '#lang_code'],
             'join_type' => 'LEFT'
-        ),
-    ),
-    'options' => array(
-        'lang_code' => array(
+        ],
+    ],
+    'options' => [
+        'lang_code' => [
             'title' => 'language',
             'type' => 'languages',
-            'default_value' => array(DEFAULT_LANGUAGE),
-        ),
-    ),
-    'export_fields' => array(
-        'Question ID' => array(
+            'default_value' => [DEFAULT_LANGUAGE],
+        ],
+    ],
+    'export_fields' => [
+        'Question ID' => [
             'db_field' => 'question_id',
             'alt_key' => true,
             'required' => true,
-        ),
-        'Language' => array(
+        ],
+        'Language' => [
             'table' => 'faq_question_descriptions',
             'db_field' => 'lang_code',
             'type' => 'languages',
             'required' => true,
             'multilang' => true
-        ),
-        'Question' => array(
+        ],
+        'Question' => [
             'table' => 'faq_question_descriptions',
             'db_field' => 'question',
             'required' => true,
             'multilang' => true,
-        ),
-        'Answer' => array(
+        ],
+        'Answer' => [
             'table' => 'faq_question_descriptions',
             'db_field' => 'answer',
             'multilang' => true,
-        ),
-        'Author' => array(
+        ],
+        'Author' => [
             'table' => 'faq_question_descriptions',
             'db_field' => 'author',
             'multilang' => true,
-        ),
-        'Creation Date' => array(
+        ],
+        'Creation Date' => [
             'db_field' => 'timestamp',
-            'process_get' => array('fn_timestamp_to_date', '#this'),
-            'convert_put' => array('fn_date_to_timestamp', '#this'),
-        ),
-        'Position' => array(
+            'process_get' => ['fn_timestamp_to_date', '#this'],
+            'convert_put' => ['fn_date_to_timestamp', '#this'],
+        ],
+        'Position' => [
             'db_field' => 'position',
-        ),
-        'Status' => array(
+        ],
+        'Status' => [
             'db_field' => 'status',
-        ),
-    )
-);
+        ],
+    ]
+];
 
 return $schema;
