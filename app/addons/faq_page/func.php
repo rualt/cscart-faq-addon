@@ -174,7 +174,6 @@ function fn_get_faq_page_question_data($question_id, $lang_code = CART_LANGUAGE)
         . implode(' ', $joins)
         . " $condition"
     );
-    fn_print_r($question, $condition);
 
     /**
      * Post processing of question data
