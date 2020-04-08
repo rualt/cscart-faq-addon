@@ -97,7 +97,7 @@ function fn_get_faq_page_questions($params = [], $lang_code = CART_LANGUAGE, $it
     }
 
     $questions = db_get_hash_array(
-        "SELECT ?p FROM ?:faq_questions "
+        'SELECT ?p FROM ?:faq_questions '
         . $join
         . 'WHERE 1 ?p ?p ?p',
         'question_id',
@@ -148,12 +148,12 @@ function fn_get_faq_page_question_data($question_id, $lang_code = CART_LANGUAGE)
     }
 
     $joins[] = db_quote(
-        "LEFT JOIN ?:faq_question_descriptions ON ?:faq_question_descriptions.question_id = 
-        ?:faq_questions.question_id AND ?:faq_question_descriptions.lang_code = ?s",
+        'LEFT JOIN ?:faq_question_descriptions ON ?:faq_question_descriptions.question_id = 
+        ?:faq_questions.question_id AND ?:faq_question_descriptions.lang_code = ?s',
         $lang_code
     );
 
-    $condition = db_quote("WHERE ?:faq_questions.question_id = ?i", $question_id);
+    $condition = db_quote('WHERE ?:faq_questions.question_id = ?i', $question_id);
     $condition .= (AREA == 'A') ? '' : " AND ?:faq_questions.status IN ('A', 'H') ";
 
     /**
@@ -168,10 +168,10 @@ function fn_get_faq_page_question_data($question_id, $lang_code = CART_LANGUAGE)
     fn_set_hook('get_faq_page_question_data', $question_id, $lang_code, $fields, $joins, $condition);
 
     $question = db_get_row(
-        "SELECT "
-        . implode(", ", $fields)
-        . " FROM ?:faq_questions "
-        . implode(" ", $joins)
+        'SELECT '
+        . implode(', ', $fields)
+        . ' FROM ?:faq_questions '
+        . implode(' ', $joins)
         . " $condition"
     );
 
@@ -195,8 +195,8 @@ function fn_get_faq_page_question_data($question_id, $lang_code = CART_LANGUAGE)
 function fn_delete_faq_page_question($question_id)
 {
     if (!empty($question_id)) {
-        db_query("DELETE FROM ?:faq_questions WHERE question_id = ?i", $question_id);
-        db_query("DELETE FROM ?:faq_question_descriptions WHERE question_id = ?i", $question_id);
+        db_query('DELETE FROM ?:faq_questions WHERE question_id = ?i', $question_id);
+        db_query('DELETE FROM ?:faq_question_descriptions WHERE question_id = ?i', $question_id);
 
         /**
          * Hook after delete question by id
@@ -225,9 +225,9 @@ function fn_faq_page_update_question($data, $question_id, $lang_code = DESCR_SL)
     }
 
     if (!empty($question_id)) {
-        db_query("UPDATE ?:faq_questions SET ?u WHERE question_id = ?i", $data, $question_id);
+        db_query('UPDATE ?:faq_questions SET ?u WHERE question_id = ?i', $data, $question_id);
         db_query(
-            "UPDATE ?:faq_question_descriptions"
+            'UPDATE ?:faq_question_descriptions'
             . ' SET ?u'
             . ' WHERE question_id = ?i'
             . ' AND lang_code = ?s',
@@ -236,10 +236,10 @@ function fn_faq_page_update_question($data, $question_id, $lang_code = DESCR_SL)
             $lang_code
         );
     } else {
-        $question_id = $data['question_id'] = db_query("REPLACE INTO ?:faq_questions ?e", $data);
+        $question_id = $data['question_id'] = db_query('REPLACE INTO ?:faq_questions ?e', $data);
 
         foreach (Languages::getAll() as $data['lang_code'] => $v) {
-            db_query("REPLACE INTO ?:faq_question_descriptions ?e", $data);
+            db_query('REPLACE INTO ?:faq_question_descriptions ?e', $data);
         }
     }
     return $question_id;
