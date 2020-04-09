@@ -1,27 +1,28 @@
+
 {assign var="title" value=__("faq")}
 
 {include file="common/pagination.tpl"}
 
 {if $questions}
-
-</br>
-
+{script src="js/addons/faq_page/accordion.js"}
+<div class="ty-accordion">
 {foreach $questions as $question}
-    <p>
-        <h3>
-            <details>
-                <summary>{$question.question}</summary>
-                </br>
-                <p>{$question.answer nofilter}</p>
-            </details>
+    <div class='faq-accordion'>
+        <h3 class="ui-accordion-header">
+        <span class="ui-accordion-header-icon ui-icon"></span>
+            {$question.question}
         </h3>
-    </p>
-{/foreach}
-
+        <div class="ui-accordion-content hidden">
+            <p>
+                {$question.answer nofilter}
+            </p>    
+        </div>
+    </div>
+    {/foreach}
+    </div>
 {else}
     <p class="ty-no-items">{__("no_items")}</p>
 {/if}
-
 
 {include file="common/pagination.tpl"}
 
