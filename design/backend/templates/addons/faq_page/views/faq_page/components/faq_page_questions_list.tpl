@@ -22,7 +22,7 @@
         {/hook}
     </tr>
     </thead>
-    {foreach from=$questions item=question}
+    {foreach $questions as $question}
     <tr>
         {hook name="faq_page_questions_list:table_body"}
         <td>
@@ -33,7 +33,6 @@
     {/foreach}
     </table>
 </div>
-
 {else}
     <p class="no-items">{__("no_data")}</p>
 {/if}
