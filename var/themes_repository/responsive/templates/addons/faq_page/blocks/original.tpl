@@ -1,24 +1,15 @@
-{include file="common/pagination.tpl"}
-{fn_print_r('test')}
-{if $questions}
+{** block-faq_page:original **}
 {script src="js/addons/faq_page/accordion.js"}
-<div class="ty-accordion">
-{foreach $questions as $question}
-    <div class='faq-accordion'>
+{foreach from=$items item="question" key="key"}
+    <div class='ty-accordion faq-accordion'>
         <h3 class="ui-accordion-header">
-        <span class="ui-accordion-header-icon ui-icon"></span>
+            <span class="ui-accordion-header-icon ui-icon"></span>
             {$question.question}
         </h3>
-        <div class="ui-accordion-content hidden">
-            <p>
-                {$question.answer nofilter}
-            </p>    
+            <div class="ui-accordion-content ty-wysiwyg-content hidden">
+                <p>
+                    {$question.answer nofilter}
+                </p>    
+            </div>
         </div>
-    </div>
-    {/foreach}
-    </div>
-{else}
-    <p class="ty-no-items">{__("no_items")}</p>
-{/if}
-
-{include file="common/pagination.tpl"}
+{/foreach}
