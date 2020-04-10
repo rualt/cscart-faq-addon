@@ -7,7 +7,7 @@ $schema['faq'] = [
             'hide_label' => true,
             'type' => 'enum',
             'object' => 'questions',
-            'items_function' => 'fn_faq_page_get_questions',
+            'items_function' => 'fn_get_faq_page_questions',
             'fillings' => [
                 'manually' => [
                     'picker' => 'addons/faq_page/pickers/faq_page/picker.tpl',
@@ -31,7 +31,7 @@ $schema['faq'] = [
         ],
     ],
     'templates' => [
-        'addons/faq_page/blocks/original.tpl' => []
+        'addons/faq_page/blocks/original.tpl' => [],
     ],
     'wrappers' => 'blocks/wrappers',
     'cache' => [
