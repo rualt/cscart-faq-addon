@@ -46,6 +46,10 @@ function fn_get_faq_page_questions($params = [], $lang_code = CART_LANGUAGE, $it
 
     $sorting = db_sort($params, $sortings, 'position', 'asc');
 
+    if (!empty($params['item_ids'])) {
+        $condition .= db_quote(' AND ?:faq_questions.question_id IN (?n)', explode(',', $params['item_ids']));
+    }
+
     if (!empty($params['name'])) {
         $condition .= db_quote(' AND ?:faq_question_descriptions.question LIKE ?l', '%' . trim($params['name']) . '%');
     }
