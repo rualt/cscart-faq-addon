@@ -63,7 +63,7 @@ if ($mode == 'update') {
     ]);
 
     Tygh::$app['view']->assign('question', $question);
-} elseif ($mode == 'manage') {
+} elseif ($mode == 'manage' || $mode == 'picker') {
     list($questions, $params) = fn_get_faq_page_questions(
         $_REQUEST,
         DESCR_SL,
@@ -74,4 +74,12 @@ if ($mode == 'update') {
         'questions'  => $questions,
         'search' => $params
     ]);
+}
+
+//
+// faq_questions picker
+//
+if ($mode == 'picker') {
+    Tygh::$app['view']->display('addons/faq_page/pickers/faq_page/picker_contents.tpl');
+    exit;
 }

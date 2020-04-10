@@ -207,6 +207,15 @@ function fn_delete_faq_page_question($question_id)
     }
 }
 
+function fn_get_faq_page_question_name($question_id, $lang_code = CART_LANGUAGE)
+{
+    if (!empty($question_id)) {
+        return db_get_field("SELECT question FROM ?:faq_question_descriptions WHERE question_id = ?i AND lang_code = ?s", $question_id, $lang_code);
+    }
+
+    return false;
+}
+
 /**
  * Updates or creates new question
  *
