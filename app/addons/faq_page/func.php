@@ -211,13 +211,28 @@ function fn_delete_faq_page_question($question_id)
     }
 }
 
+/**
+ * Returns faq question name from db by it's id
+ *
+ * @param int    $question_id Question ID
+ * @param string $lang_code   2 letters language code
+ *
+ * @return string   Question name
+ */
 function fn_get_faq_page_question_name($question_id, $lang_code = CART_LANGUAGE)
 {
     if (!empty($question_id)) {
-        return db_get_field("SELECT question FROM ?:faq_question_descriptions WHERE question_id = ?i AND lang_code = ?s", $question_id, $lang_code);
+        return db_get_field(
+            'SELECT question'
+            . ' FROM ?:faq_question_descriptions'
+            . ' WHERE question_id = ?i'
+            . ' AND lang_code = ?s',
+            $question_id,
+            $lang_code
+        );
     }
 
-    return false;
+    return 'false';
 }
 
 /**
