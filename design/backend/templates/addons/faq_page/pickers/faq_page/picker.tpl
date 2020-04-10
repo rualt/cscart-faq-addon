@@ -14,10 +14,10 @@
     {/if}
 
     {if !$no_container}<div class="buttons-container">{/if}{if $picker_view}[{/if}
-    {include file="buttons/button.tpl" but_id="opener_picker_`$data_id`" but_href="faq_page.picker?display=`$display`&picker_for=`$picker_for`&extra=`$extra_var`&checkbox_name=`$checkbox_name`&aoc=`$aoc`&data_id=`$data_id`"|fn_url but_text=$but_text|default:__("add_questions") but_role="add" but_target_id="content_`$data_id`" but_meta="cm-dialog-opener btn pull-right" but_icon="icon-plus"}
+    {include file="buttons/button.tpl" but_id="opener_picker_`$data_id`" but_href="faq_page.picker?display=`$display`&picker_for=`$picker_for`&extra=`$extra_var`&checkbox_name=`$checkbox_name`&aoc=`$aoc`&data_id=`$data_id`"|fn_url but_text=$but_text|default:__("faq_page.add_questions") but_role="add" but_target_id="content_`$data_id`" but_meta="cm-dialog-opener btn pull-right" but_icon="icon-plus"}
     {if $picker_view}]{/if}{if !$no_container}</div>{/if}
 
-    <div class="hidden" id="content_{$data_id}" title="{$but_text|default:__("add_questions")}">
+    <div class="hidden" id="content_{$data_id}" title="{$but_text|default:__("faq_page.add_questions")}">
     </div>
 
 {/if}
@@ -31,7 +31,7 @@
         <thead>
             <tr>
                 {if $positions}<th>{__("position_short")}</th>{/if}
-                <th width="100%">{__("name")}</th>
+                <th width="100%">{__("question")}</th>
                 <th>&nbsp;</th>
             </tr>
         </thead>

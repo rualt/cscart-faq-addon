@@ -44,7 +44,7 @@
 
 {if $questions}
 <div class="buttons-container">
-    {include file="buttons/add_close.tpl" but_text=__("add_questions") but_close_text=__("add_questions_and_close") is_js=$smarty.request.extra|fn_is_empty}
+    {include file="buttons/add_close.tpl" but_text=__("faq_page.add_questions") but_close_text=__("faq_page.add_questions_and_close") is_js=$smarty.request.extra|fn_is_empty}
 </div>
 {/if}
 
