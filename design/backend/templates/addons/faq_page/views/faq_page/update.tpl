@@ -88,7 +88,7 @@ name="questions_form" enctype="multipart/form-data">
 
 {notes}
     {hook name="faq_page:update_notes"}
-    {__("faq_page.details_notes")}
+    {__("faq_page.details_notes", ["[layouts_href]" => fn_url('block_manager.manage')])}
     {/hook}
 {/notes}
 

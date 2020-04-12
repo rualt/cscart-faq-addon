@@ -57,13 +57,12 @@ msgid "Editing question"
 msgstr "Editing question"
 
 msgctxt "Languages::faq_page.details_notes"
-msgid "Details notes"
-msgstr "The FAQ page on the storefront can be found <a href=\"/faq-page\" target=\"_blank\">here</a>.<br/>
-You can add a link to the FAQ page through the <strong>Menu Editor</strong>. <br /> <br />
-Go to the page <strong>Design → Menus</strong>, select the menu group to which you would like to add a link, click on the <strong>Add item</strong> button and select the name of a new menu item, for example 'FAQ'. <br /> <br />
-Click on the newly created item.<br />
-In the <strong>Parent item</strong> field, select <em>Root level</em>. <br />
-In the <strong>Pos.</strong> field specify the position of the FAQ link among other menu items - the higher the value, the closer to the end of the list.<br />
-In the <strong>URL</strong> field add the address of the page: <em>/faq-page</em><br /> <br />
-Everything is ready! The link to the page should appear in the selected menu."
+msgid "FAQ details notes"
+msgstr "After you create questions here, you should use the <strong>Layout editor</strong> to add them to the storefront.<br /><br />
+Go to <a href=\"[layouts_href]\" target=\"_blank\">Design → Layouts</a>, switch to the location where you want the FAQs to appear, and add a new block with type <strong>FAQ</strong>.<br /><br />
+In this block settings, go to the <strong>Content</strong> tab, pick the <strong>Manual</strong> filling, and click on the <strong>Add questions</strong> button.<br /><br />
+You will see the list of all the questions in your store. Pick the one(s) you need and click on the <strong>Add questions and close</strong> button.<br /><br />
+Finally, click on the <strong>Create</strong> button to save your changes.<br /><br />
+In addition the FAQ page with list of <strong>all questions</strong> on the storefront can be found <a href=\"/faq-page\" target=\"_blank\">here</a>.<br/>
+You can add a link to this page through the <strong>Menu Editor</strong> (do not forget to first remove or disable the demo questions added  with the addon)."
 
