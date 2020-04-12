@@ -41,6 +41,20 @@ name="questions_form" enctype="multipart/form-data">
             <input type="text" name="question_data[author]" id="elm_question_author" value="{$question.author}" size="25" class="input-large"/></div>
         </div>
 
+        <div class="control-group object-picker__simple">
+            <label class="control-label cm-required" for="elm_author_select2">{__("author")}</label>
+            <div class="controls select2-container--mini">
+                {* F - feature, R - range field, B - base field *}
+                <select name="question_data[author]" id="elm_author_select2" class="cm-object-picker">
+                    <optgroup label="{__("administrators")}">
+                    {foreach $users as $key=>$admin}
+                        <option value="{$admin.firstname} {$admin.lastname}" {if $question.author == "{$admin.firstname} {$admin.lastname}"}selected{/if}>{$admin.firstname} {$admin.lastname}</option>
+                    {/foreach}
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+
         <div class="control-group">
             <label for="elm_question_position" class="control-label">{__("position_short")}</label>
             <div class="controls">

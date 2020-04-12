@@ -50,7 +50,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 //
 if ($mode == 'update') {
     $question = fn_get_faq_page_question_data($_REQUEST['question_id'], DESCR_SL);
+    // $params['is_root'] = 'Y';
+    $params['user_type'] = 'A';
+    list($users, $search) = fn_get_users($params, $auth, Registry::get('settings.Appearance.admin_elements_per_page'));
 
+    // fn_print_die($users);
     if (empty($question)) {
         return [CONTROLLER_STATUS_NO_PAGE];
     }
@@ -62,7 +66,10 @@ if ($mode == 'update') {
         ]
     ]);
 
-    Tygh::$app['view']->assign('question', $question);
+    Tygh::$app['view']->assign([
+        'question'  => $question,
+        'users' => $users
+    ]);
 } elseif ($mode == 'manage' || $mode == 'picker') {
     list($questions, $params) = fn_get_faq_page_questions(
         $_REQUEST,
