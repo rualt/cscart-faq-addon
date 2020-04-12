@@ -28,18 +28,6 @@ msgctxt "Languages::question"
 msgid "Question"
 msgstr "Вопрос"
 
-msgctxt "Languages::faq_page.question"
-msgid "Question"
-msgstr "Вопрос"
-
-msgctxt "Languages::faq_page.answer"
-msgid "Answer"
-msgstr "Ответ"
-
-msgctxt "Languages::faq_page.author"
-msgid "Author"
-msgstr "Автор"
-
 msgctxt "Languages::faq_page.add_questions"
 msgid "Add questions"
 msgstr "Добавить вопросы"
