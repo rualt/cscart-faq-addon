@@ -1,0 +1,55 @@
+msgid ""
+msgstr "Project-Id-Version: tygh\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Russian\n"
+"Language: ru_RU"
+
+msgctxt "Addons::name::faq_page"
+msgid "FAQ Page"
+msgstr "FAQ (Часто задаваемые вопросы)"
+
+msgctxt "Addons::description::faq_page"
+msgid "FAQ Page description"
+msgstr "Позволяет создавать вопросы и ответы для страницы FAQ"
+
+msgctxt "Languages::faq"
+msgid "FAQ"
+msgstr "FAQ"
+
+msgctxt "Languages::faq_menu_description"
+msgid "This is a menu description"
+msgstr "Создание страницы вопросов и ответов для размещения на витрине магазина."
+
+msgctxt "Languages::question_id"
+msgid "Question ID"
+msgstr "ID вопроса"
+
+msgctxt "Languages::question"
+msgid "Question"
+msgstr "Вопрос"
+
+msgctxt "Languages::faq_page.add_questions"
+msgid "Add questions"
+msgstr "Добавить вопросы"
+
+msgctxt "Languages::faq_page.add_questions_and_close"
+msgid "Add questions ans close"
+msgstr "Добавить вопросы и закрыть"
+
+msgctxt "Languages::faq_page.new_question"
+msgid "New question"
+msgstr "Новый вопрос"
+
+msgctxt "Languages::faq_page.editing_question"
+msgid "Editing question"
+msgstr "Редактирование вопроса"
+
+msgctxt "Languages::faq_page.details_notes"
+msgid "FAQ details notes"
+msgstr "После того, как вы создадите вопросы, добавить их на витрину можно через <strong>Редактор макетов</strong>.<br /><br />
+Перейдите на страницу <a href=\"[layouts_href]\" target=\"_blank\">Дизайн → Макеты</a>, переключитесь в локацию, на которой должен отображаться список вопросов, и добавьте новый блок с типом <strong>FAQ</strong>.<br /><br />
+В диалоге настроек этого блока перейдите во вкладку <strong>Содержимое</strong>, выберите тип заполнения <strong>Вручную</strong> и нажмите на кнопку <strong>Добавить вопросы</strong>.<br /><br />
+В появившемся списке вопросов выберите нужный и нажмите на кнопку <strong>Добавить вопросы и закрыть</strong>.<br /><br />
+Наконец, нажмите на кнопку <strong>Создать</strong>, чтобы сохранить изменения.<br /><br />
+Дополнительно FAQ со списком <strong>всех вопросов</strong> на витрине можно найти<a href=\"/faq-page\" target=\"_blank\">здесь</a>.<br />
+Вы можете добавить ссылку на эту страницу через <strong>Редактор меню</strong> (нe забудьте сначала удалить или выключить демо-вопросы, добавленные при установке модуля)."

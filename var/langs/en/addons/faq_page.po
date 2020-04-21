@@ -1,0 +1,56 @@
+msgid ""
+msgstr "Project-Id-Version: tygh\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: English\n"
+"Language: en_US"
+
+msgctxt "Addons::name::faq_page"
+msgid "FAQ Page"
+msgstr "FAQ (Frequently asked questions)"
+
+msgctxt "Addons::description::faq_page"
+msgid "FAQ Page description"
+msgstr "Allows you to create questions and answers for your FAQ page"
+
+msgctxt "Languages::faq"
+msgid "FAQ"
+msgstr "FAQ"
+
+msgctxt "Languages::faq_menu_description"
+msgid "This is a menu description"
+msgstr "Create questions and answers page that can be placed on the storefront."
+
+msgctxt "Languages::question_id"
+msgid "Question ID"
+msgstr "Question ID"
+
+msgctxt "Languages::question"
+msgid "Question"
+msgstr "Question"
+
+msgctxt "Languages::faq_page.add_questions"
+msgid "Add questions"
+msgstr "Add questions"
+
+msgctxt "Languages::faq_page.add_questions_and_close"
+msgid "Add questions ans close"
+msgstr "Add questions ans close"
+
+msgctxt "Languages::faq_page.new_question"
+msgid "New question"
+msgstr "New question"
+
+msgctxt "Languages::faq_page.editing_question"
+msgid "Editing question"
+msgstr "Editing question"
+
+msgctxt "Languages::faq_page.details_notes"
+msgid "FAQ details notes"
+msgstr "After you create questions here, you should use the <strong>Layout editor</strong> to add them to the storefront.<br /><br />
+Go to <a href=\"[layouts_href]\" target=\"_blank\">Design → Layouts</a>, switch to the location where you want the FAQs to appear, and add a new block with type <strong>FAQ</strong>.<br /><br />
+In this block settings, go to the <strong>Content</strong> tab, pick the <strong>Manual</strong> filling, and click on the <strong>Add questions</strong> button.<br /><br />
+You will see the list of all the questions in your store. Pick the one(s) you need and click on the <strong>Add questions and close</strong> button.<br /><br />
+Finally, click on the <strong>Create</strong> button to save your changes.<br /><br />
+In addition the FAQ page with list of <strong>all questions</strong> on the storefront can be found <a href=\"/faq-page\" target=\"_blank\">here</a>.<br/>
+You can add a link to this page through the <strong>Menu Editor</strong> (do not forget to first remove or disable the demo questions added  with the addon)."
+
