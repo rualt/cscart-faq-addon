@@ -3,9 +3,14 @@
 This CS-Cart add-on allows you to add/edit frequently asked questions and answers at the admin panel 
 and display FAQ page on the storefront
 
+#### Features:
+- Export / import questions data in CSV
+- FAQ layout block with a customizable questions list
+- A page with all FAQ questions has SEF link
+
 #### FAQ page
 
-![FAQ page](https://i.ibb.co/5h14M3V/FAQ-storefront.png "FAQ page")
+![FAQ page](https://i.ibb.co/7bqc6yD/faq-menu.png "FAQ page")
 
 #### Add-on menu
 
